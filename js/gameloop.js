@@ -10,7 +10,7 @@ context = canvas.getContext("2d");
 
 player = new GameObject(1,canvas.height/2,5,100,"#6200ff");
 player.vx=0;
-player.vy=-0;
+player.vy=-4;
 
 npc1 = new GameObject(300,canvas.height/2,100,100,"#00ff00")
 npc2 = new GameObject(600,canvas.height/2,100,100,"#0000ff")
@@ -59,13 +59,13 @@ function animate()
         }
         if (player.y > canvas.height - player.height/2)
         {
-            //player.vy=-4
+            player.vy=-4
             //player.color = "#00ff00"
             player.y = canvas.height -player.height/2
         }
         else if (player.y < player.height/2)
         {
-            //player.vy=4
+            player.vy=4
             //player.color = "#ff0000" 
             player.y = player.height/2
         }

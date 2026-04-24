@@ -10,11 +10,7 @@ context = canvas.getContext("2d");
 
 player = new GameObject(1,canvas.height/2,5,100,"#6200ff");
 player.vx=0;
-player.vy=-0;
-
-NPC0 = new GameObject(canvas.width/2,canvas.height/2,100,100,"#6200ff");
-NPC0.vx=4;
-NPC0.vy=-4;
+player.vy=-4;
 
 npc1 = new GameObject(300,canvas.height/2,100,100,"#00ff00")
 npc2 = new GameObject(600,canvas.height/2,100,100,"#0000ff")
@@ -59,40 +55,15 @@ function animate()
         }
         if (player.y > canvas.height - player.height/2)
         {
-            //player.vy=-4
+            player.vy=-4
             //player.color = "#00ff00"
             player.y = canvas.height -player.height/2
         }
         else if (player.y < player.height/2)
         {
-            //player.vy=4
+            player.vy=4
             //player.color = "#ff0000" 
             player.y = player.height/2
-        }
-        
-       // NPC0 collision
-       NPC0.move();
-        if (NPC0.x > canvas.width -NPC0.width/2)
-        {
-              NPC0.vx=-4
-            //NPC0.color = "#ffff00"
-
-        }
-        else if (NPC0.x < NPC0.width/2)
-        {
-              NPC0.vx=4
-            //NPC0.color = "#0000ff"
-
-        }
-        if (NPC0.y > canvas.height -NPC0.height/2)
-        {
-              NPC0.vy=-4
-            //NPC0.color = "#00ff00"
-        }
-        else if (NPC0.y < NPC0.height/2)
-        {
-              NPC0.vy=4
-            //NPC0.color = "#ff0000" 
         }
         
         
@@ -122,7 +93,6 @@ function animate()
         }
 
     player.drawRect();
-    NPC0.drawCircle();
     //npc1.drawCircle();  
     //npc2.drawCircle();  
     //npc3.drawRect();  
